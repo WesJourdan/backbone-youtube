@@ -1,0 +1,33 @@
+body {
+  padding-top: 2em;
+}
+
+.playlist {
+  overflow: auto;
+  height: 640px;
+}
+
+.playlist-item {
+  margin-top: 1em;
+  filter: grayscale(100%);
+}
+
+.playlist-item:hover {
+  cursor: pointer;
+  color: blue;
+  filter: none;
+}
+
+.details {
+  width: 640px;
+}
+
+.title {
+  text-align: center;
+  padding-bottom: 10px;
+  text-shadow: 1px 1px 1px red, 0 0 1px blue, 0 0 .2em red;
+}
+
+.input {
+  box-shadow: 1px 1px 1px red, 0 0 1px blue, 0 0 .2em red;
+}

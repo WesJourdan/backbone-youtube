@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/underscore/underscore-min.js"></script>
+    <script src="node_modules/backbone/backbone-min.js"></script>
+    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+
+    <meta charset="utf-8">
+    <title>Backbone Youtube</title>
+  </head>
+  <body>
+    <div class="container main">
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <h1 class="title">CloneTube</h1>
+          <div class="form-group">
+            <input type="text" class="form-control input" id="search-input" placeholder="Search YouTube" autofocus>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-start">
+        <div class="col-xl-8 player">
+          <!-- append player-template here. -->
+        </div>
+        <div class="col-xl-4 col-lg-8 justify-content-end playlist">
+          <!-- append playlist-template here. -->
+        </div>
+      </div>
+    </div>
+
+    <script id="player-template" type="text/x-handlebars-template">
+      <iframe id="player" type="text/html" width="640" height="390"
+        src="http://www.youtube.com/embed/{{videoId}}?enablejsapi=1"
+        frameborder="0">
+      </iframe>
+      <div class="details">
+        <h5>{{title}}</h5>
+        <p>{{description}}</p>
+      </div>
+    </script>
+
+    <script id="playlist-template" type="text/x-handlebars-template">
+      <div class="row playlist-item">
+        <div class="col-4">
+          <img class="thumb" src="{{thumbnail}}"></img>
+        </div>
+        <div class="col-8">
+          <p>{{title}}</p>
+        </div>
+      </div>
+    </script>
+    <script src="collections/models/AppModel.js"></script>
+    <script src="collections/models/VideoModel.js"></script>
+    <script src="collections/VideosCollection.js"></script>
+    <script src="views/AppView.js"></script>
+    <script src="views/CurrentVideoView.js"></script>
+    <script src="views/VideosView.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
